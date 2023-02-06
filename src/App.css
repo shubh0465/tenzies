@@ -14,8 +14,8 @@ body{
   align-items: center;
 }
 .container{
-  width: 80vh;
-  height: 80vh;
+  width: 70vh;
+  height: 70vh;
   background: #F5F5F5;
   border-radius: 10px;
   text-align: center;
@@ -41,7 +41,7 @@ body{
 }
 .roll-button{
     height: 50px;
-    width: 100px;
+    width: 120px;
     border: none;
     border-radius: 6px;
     background-color: #5035FF;
@@ -51,4 +51,10 @@ body{
 }
 .roll-button:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+.information{
+  font-family: 'Inter';
+  font-weight: 400;
+  color: #4A4E74;
+  width: 40vh;
 }
