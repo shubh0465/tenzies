@@ -7,7 +7,7 @@ function App() {
 
   const [allNewDiceArray, setAllNewDiceArray] = useState(allNewDice())
 
-  const [tenzies, setTenzies] = useState(true)
+  const [tenzies, setTenzies] = useState(false)
 
   useEffect(() => {
     const val = allNewDiceArray[0].value
