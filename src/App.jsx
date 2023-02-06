@@ -2,7 +2,6 @@ import { useState,useEffect } from 'react'
 import './App.css'
 import Dice from './Components/Dice'
 import { nanoid } from 'nanoid';
-// import useWindowSize from 'react-use'
 import Confetti from 'react-confetti';
 function App() {
 
