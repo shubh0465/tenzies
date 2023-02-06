@@ -10,21 +10,15 @@ function App() {
     }
     return newDice
   }
-  console.log(allNewDice());
+  const [allNewDiceArray, setAllNewDiceArray] = useState(allNewDice())
+  const diceElement = allNewDiceArray.map((item,index)=>{
+    return <Dice key={index} value={item}/>
+  })
   return (
     <main className='main-container'>
       <div className='container'>
         <div className='dice-container'>
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
-          <Dice value={1} />
+          {diceElement}
         </div>
       </div>
     </main>
