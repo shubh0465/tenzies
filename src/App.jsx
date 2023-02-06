@@ -16,7 +16,11 @@ function App() {
   const [allNewDiceArray, setAllNewDiceArray] = useState(allNewDice())
   
   function generateNewArray() {
-    setAllNewDiceArray(allNewDice())
+    setAllNewDiceArray(oldArray =>{
+      return oldArray.map(item=>{
+        return item.isHeld===false ? {...item, value : Math.floor(Math.random() * 6) + 1} : item;
+      })
+    })
   }
   
   function holdDice(id) {
