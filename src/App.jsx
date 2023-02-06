@@ -2,12 +2,13 @@ import { useState,useEffect } from 'react'
 import './App.css'
 import Dice from './Components/Dice'
 import { nanoid } from 'nanoid';
+// import useWindowSize from 'react-use'
 import Confetti from 'react-confetti';
 function App() {
 
   const [allNewDiceArray, setAllNewDiceArray] = useState(allNewDice())
 
-  const [tenzies, setTenzies] = useState(false)
+  const [tenzies, setTenzies] = useState(true)
 
   useEffect(() => {
     const val = allNewDiceArray[0].value
@@ -57,11 +58,9 @@ function App() {
   const diceElement = allNewDiceArray.map((item) => {
     return <Dice key={item.id} value={item.value} isHeld={item.isHeld} holdDice={() => holdDice(item.id)} />
   })
-
-
   return (
     <main className='main-container'>
-      {tenzies && <Confetti/>}
+      {tenzies && <Confetti width={window.innerWidth-5} height={window.innerHeight-5}/>}
       <div className='container'>
         <div>
           <h1>Tenzies</h1>
