@@ -34,20 +34,15 @@ function App() {
   }
 
   function generateNewArray() {
+    if(!tenzies){
     setAllNewDiceArray(oldArray => {
       return oldArray.map(item => {
         return item.isHeld ? item : generateDie();
       })
-    })
-  }
-
-  function generateNewGame(){
-    setTenzies(false)
-    setAllNewDiceArray(oldArray => {
-      return oldArray.map(()=> {
-        return generateDie();
-      })
-    })
+    })}
+    else{
+      setAllNewDiceArray(allNewDice())
+    }
   }
 
   function holdDice(id) {
@@ -74,7 +69,7 @@ function App() {
         <div className='dice-container'>
           {diceElement}
         </div>
-        {tenzies? <button onClick={generateNewGame} className="roll-button">New Game</button> : <button onClick={generateNewArray} className="roll-button">Roll</button>}
+        <button onClick={generateNewArray} className="roll-button">{tenzies?"New Game":"Roll"}</button>
       </div>
     </main>
   )
